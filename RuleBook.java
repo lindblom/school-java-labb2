@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * RuleBook is a class that handles a collection of Rules.
@@ -10,13 +11,14 @@ public class RuleBook
 {
     // instance variables - replace the example below with your own
     private ArrayList<Rule> mRules;
+    private Random mRandom;
 
     /**
      * Constructor for objects of class RuleBook
      */
     public RuleBook()
     {
-        mRules = new ArrayList<Rule>;
+        mRules = new ArrayList<Rule>();
     }
     
     /**
@@ -35,5 +37,8 @@ public class RuleBook
      * Returns a random rule from the rule book
      * @return  a random rule
      */
-    public Rule 
+    public Rule randomRule()
+    {
+        return mRules.get(new Random().nextInt(mRules.size()));
+    }
 }
