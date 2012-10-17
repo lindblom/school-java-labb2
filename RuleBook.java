@@ -34,6 +34,19 @@ public class RuleBook
     }
     
     /**
+     * Adds a rule to the collection of rules and prints out a message.
+     * 
+     * @param   the description of the rule
+     * @param   the fine you'll have to pay if you break it
+     */
+    public String addRule(String inRule, int inFine)
+    {
+        Rule newRule = new Rule(inRule, inFine);
+        mRules.add(newRule);
+        return "Ny regel tillagd: " + newRule;
+    }
+    
+    /**
      * Returns a random rule from the rule book
      * @return  a random rule
      */
