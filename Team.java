@@ -11,7 +11,7 @@ import java.util.Random;
 public class Team
 {
     // instance variables - replace the example below with your own
-    private ArrayList<Rule> mRules;
+    private RuleBook mRuleBook;
     private ArrayList<Player> mPlayers;
     private int mWeeks;
 
@@ -21,25 +21,50 @@ public class Team
     public Team()
     {
         // initialise instance variables
-        mRules = new ArrayList<Rule>();
+        mRuleBook = new RuleBook();
         mPlayers = new ArrayList<Player>();
+        
+        loadInitialRules();
+        
+        String[] initialPlayerNames = { "Anders Andersson", "Karl Svensson", "Anton Viktorsson",
+            "Frej Henriksson", "Greger Sivander", "Carl Alivio", "David Jakrén", "Algot Elvin",
+            "Botvid Arg", "Sassi Frizon" };
+           
+        loadInitialPlayer(initialPlayerNames);
     }
     
     /**
-     * Constructor that takes a string array of player names and adds them as players.
+     * A loader method that takes a string array of player names and adds them as players.
      * 
      * @param   string array of player names 
-     */
-    public Team(String[] inPlayerNames)
+     */    
+    private void loadInitialPlayers(String[] inPlayerNames)
     {
-        // call main constructor
-        this();
-        
         // iterate over player names and add them to mPlayers
         for (String name : inPlayerNames)
         {
             mPlayers.add(new Player(name));
         }
+    }
+    
+    /**
+     * A loader method for loading initial rules for the team.
+     */
+    private void loadInitialRules()
+    {
+        // add initial rules one-by-one
+        mRuleBook.addRule("Sen ankomst träning", 50);
+        mRuleBook.addRule("Sen ankomst match", 100);
+        mRuleBook.addRule("Mobil som ringer under samling/genomgång", 50);
+        mRuleBook.addRule("Glömd utrustning till bortamatch", 100);
+        mRuleBook.addRule("Oreda på platsen", 50);
+        mRuleBook.addRule("10 min misconduct", 100);
+        mRuleBook.addRule("Matchstraff för snack", 200);
+        mRuleBook.addRule("Hångel på lokal", 50);
+        mRuleBook.addRule("Ta över någons ex", 300);
+        mRuleBook.addRule("Avslagen klubba", 500);
+        mRuleBook.addRule("Bild i tidningen:", 20);
+        mRuleBook.addRule("Ramla på matchvärmning", 20);
     }
     
     /**
@@ -87,23 +112,17 @@ public class Team
             System.out.println("Det fanns ingen spelare vid namn " + inName + " i laget!");
         }
     }
-    
+  
     /**
      * Adds a rule to the collection of rules and prints out a message.
      * 
      * @param   the description of the rule
      * @param   the fine you'll have to pay if you break it
+     * @return  a summary of the new rule
      */
-    public void addRule(String inRule, int inFine)
+    public String addRule(String inRule, int inFine)
     {
-        Rule newRule = new Rule(inRule, inFine);
-        mRules.add(newRule);
-        System.out.println("Ny regel tillagd: " + newRule);
-    }
-    
-    public void addRuleWithoutPrint(String inRule, int inFine)
-    {
-        mRules.add(new Rule(inRule, inFine));
+        return mRuleBook.addRule(inRule, inFine);
     }
     
     /**
@@ -128,11 +147,8 @@ public class Team
             // for every broken rule this week
             for(int i = 0; i < brokenRulesThisWeek; i++)
             {
-                // a random rule gets selected 
-                Rule brokenRule = mRules.get(new Random().nextInt(mRules.size()));
-                
                 // and added to a random player
-                addBrokenRuleToRandomPlayer(brokenRule);
+                addBrokenRuleToRandomPlayer(mRuleBook.randomRule());
             }
         }
         
@@ -248,18 +264,6 @@ public class Team
         {
             // prints the player by using the overridden toString method
             System.out.println(player);
-        }
-    }
-    
-    /**
-     * Prints all the rules as a list.
-     */
-    public void printRules()
-    {
-        for(Rule rule : mRules)
-        {
-            // prints the rule by using the overridden toString method
-            System.out.println(rule);
         }
     }
 }
