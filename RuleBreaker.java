@@ -7,7 +7,7 @@
  */
 public class RuleBreaker
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private Team mTeam;
     private InputHandler mInput;
 
