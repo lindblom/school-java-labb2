@@ -80,14 +80,16 @@ public class Team
     }
     
     /**
-     * Removes a player from the collection of players and prints out a message
+     * Removes a player from the collection of players and returns a report message
      * 
-     * @param   the full name of the player to be removed
+     * @param   full name of the player to be removed
+     * @return  report message
      */
-    public void removePlayer(String inName)
+    public String removePlayer(String inName)
     {
         // sets playerToRemove to null
         Player playerToRemove = null;
+        String returnMessage = "";
         
         // iterate over players to find one with the desired name
         for(Player player : mPlayers)
@@ -105,13 +107,15 @@ public class Team
         {
             // we remove the player and print out a message about it
             mPlayers.remove(playerToRemove);
-            System.out.println("Spelaren " + playerToRemove + " är nu borttagen ur laget!");
+            returnMessage = "Spelaren " + playerToRemove + " är nu borttagen ur laget!";
         }
         else
         {
             // otherwise we print out a message notifying that we didn't fint the player
-            System.out.println("Det fanns ingen spelare vid namn " + inName + " i laget!");
+            returnMessage = "Det fanns ingen spelare vid namn " + inName + " i laget!";
         }
+        
+        return returnMessage;
     }
   
     /**
