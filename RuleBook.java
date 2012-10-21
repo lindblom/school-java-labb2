@@ -38,7 +38,7 @@ public class RuleBook
         
         // converts the ArrayList to an Array of Objects.
         // the, casts them to be Strings (as we know they are).
-        return (String[])response.toArray();
+        return response.toArray(new String[response.size()]);
     }
     
     /**
