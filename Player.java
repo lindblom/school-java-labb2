@@ -28,11 +28,12 @@ public class Player
     /**
      * Adds a rule to the ArrayList of broken rules
      * 
-     * @param  the broken rule to be added
+     * @param   the broken rule to be added
+     * @return  a message about the rule being added
      */
-    public void addBrokenRule(Rule inBrokenRule)
+    public String addBrokenRule(Rule inBrokenRule)
     {
-        mBrokenRules.add(inBrokenRule);
+        return mBrokenRules.add(inBrokenRule);
     }
     
     /**
