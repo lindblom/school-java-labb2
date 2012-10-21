@@ -40,7 +40,8 @@ public class RuleBreaker
         ScreenPrinter.print("-------------------------------------------");
         
         // ask the user for its input
-        ScreenPrinter.print("> ");
+        ScreenPrinter.printCarrot();
+        
         int choice = mScanner.nextInt();
         
         // handle the input from the user
@@ -48,9 +49,12 @@ public class RuleBreaker
         {
             case 1:
                     // ask the user how many weeks to simulate
-                    System.out.print("Hur många veckor vill du slumpa fram? (1-24 veckor): ");
+                    ScreenPrinter.print("Hur många veckor vill du slumpa fram? (1-24 veckor): ");
+                    ScreenPrinter.printCarrot();
+                    
                     // run the simulator for the number of weeks the user asked for
                     simulatePlaying(mScanner.nextInt());
+                    
                     // show main menu again
                     mainMenu();
                     break;
@@ -68,7 +72,7 @@ public class RuleBreaker
                     break;
             default:
                     // if the user has entered something else
-                    System.out.println("Ogiltigt alternativ.\n");
+                    ScreenPrinter.print("Ogiltigt alternativ.\n");
                     mainMenu();
         }
     }
@@ -79,15 +83,15 @@ public class RuleBreaker
     private void listMenu()
     {
         // print the list menu
-        System.out.println("ListMeny");
-        System.out.println("1. Lista spelare");
-        System.out.println("2. Lista regler\n");
-        System.out.println("9. Åter huvudmeny\n");
-        System.out.println("Vad vill du göra?");
-        System.out.println("-------------------------------------------");
+        ScreenPrinter.print("ListMeny");
+        ScreenPrinter.print("1. Lista spelare");
+        ScreenPrinter.print("2. Lista regler\n");
+        ScreenPrinter.print("9. Åter huvudmeny\n");
+        ScreenPrinter.print("Vad vill du göra?");
+        ScreenPrinter.print("-------------------------------------------");
         
         // get input from user
-        System.out.print("> ");
+        ScreenPrinter.printCarrot();
         int choice = mScanner.nextInt();
         
         // handle the users input
@@ -95,15 +99,17 @@ public class RuleBreaker
         {
             case 1:
                     // prints the players in the team
-                    System.out.println("Samtliga spelare i laget:");
+                    ScreenPrinter.print("Samtliga spelare i laget:");
                     ScreenPrinter.print(mTeam.playerNames());
+                    ScreenPrinter.print("");
                     // shows this menu again
                     listMenu();
                     break;
             case 2: 
                     // prints the rules for the team
-                    System.out.println("Samtliga regler för laget:");
+                    ScreenPrinter.print("Samtliga regler för laget:");
                     ScreenPrinter.print(mTeam.teamRules());
+                    ScreenPrinter.print("");
                     // show this menu again
                     listMenu();
                     break;
@@ -113,7 +119,7 @@ public class RuleBreaker
                     break;
             default:
                     // if the user has entered something else
-                    System.out.println("Ogiltigt alternativ.\n");
+                    ScreenPrinter.print("Ogiltigt alternativ.\n");
                     listMenu();
         }
     }
@@ -124,16 +130,16 @@ public class RuleBreaker
     private void managementMenu()
     {
         // prints the management menu
-        System.out.println("Administrationsmeny\n");
-        System.out.println("1. Lägg till spelare");
-        System.out.println("2. Ta bort spelare");
-        System.out.println("3. Lägg till regel\n");
-        System.out.println("9. Åter huvudmeny\n");
-        System.out.println("Vad vill du göra?");
-        System.out.println("-------------------------------------------");
+        ScreenPrinter.print("Administrationsmeny\n");
+        ScreenPrinter.print("1. Lägg till spelare");
+        ScreenPrinter.print("2. Ta bort spelare");
+        ScreenPrinter.print("3. Lägg till regel\n");
+        ScreenPrinter.print("9. Åter huvudmeny\n");
+        ScreenPrinter.print("Vad vill du göra?");
+        ScreenPrinter.print("-------------------------------------------");
         
         // gets the user input
-        System.out.print("> ");
+        ScreenPrinter.printCarrot();
         int choice = mScanner.nextInt();
         
         // handles the user input
@@ -142,32 +148,35 @@ public class RuleBreaker
             case 1:
                     // asks the user for the new players name
                     System.out.print("Namn på den nya spelaren: ");
+                    ScreenPrinter.printCarrot();
+                    
                     String newPlayer = mScanner.nextLine();
                     // adds the user entered player name
-                    addPlayer(newPlayer);
+                    ScreenPrinter.print(addPlayer(newPlayer));
                     // shows this menu again
                     managementMenu();
                     break;
                     
             case 2: 
                     // asks the user for the name of the player to remove
-                    System.out.print("Namn på spelaren som skall tas bort: ");
+                    ScreenPrinter.print("Namn på spelaren som skall tas bort: ");
                     String playerToRemove = mScanner.nextLine();
                     // removes the player
-                    removePlayer(playerToRemove);
+                    ScreenPrinter.print(removePlayer(playerToRemove));
                     // shows this menu again
                     managementMenu();
                     break;
                     
             case 3: 
                     // asks the user what rule it wants to add
-                    System.out.print("Regeln du vill lägga till: ");
-                    String newRule = mScanner.next();
+                    ScreenPrinter.print("Regeln du vill lägga till: ");
+                    String newRule = mScanner.nextLine();
                     // asks the user for the fine to be set on the new rule
-                    System.out.print("Bötesbeloppet på regeln (i kronor): ");
+                    ScreenPrinter.print("Bötesbeloppet på regeln (i kronor): ");
+                    ScreenPrinter.printCarrot();
                     int newRuleFine = mScanner.nextInt();
                     // adds the new rule
-                    addRule(newRule, newRuleFine);
+                    ScreenPrinter.print(addRule(newRule, newRuleFine));
                     // shows this menu again
                     managementMenu();
                     break;
@@ -179,7 +188,7 @@ public class RuleBreaker
                     
             default:
                     // if the user has entered something else
-                    System.out.println("Ogiltigt alternativ.\n");
+                    ScreenPrinter.print("Ogiltigt alternativ.\n");
                     managementMenu();
         }
     }
