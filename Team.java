@@ -53,18 +53,18 @@ public class Team
     private void loadInitialRules()
     {
         // add initial rules one-by-one
-        mRuleBook.addRule("Sen ankomst träning", 50);
-        mRuleBook.addRule("Sen ankomst match", 100);
-        mRuleBook.addRule("Mobil som ringer under samling/genomgång", 50);
-        mRuleBook.addRule("Glömd utrustning till bortamatch", 100);
-        mRuleBook.addRule("Oreda på platsen", 50);
-        mRuleBook.addRule("10 min misconduct", 100);
-        mRuleBook.addRule("Matchstraff för snack", 200);
-        mRuleBook.addRule("Hångel på lokal", 50);
-        mRuleBook.addRule("Ta över någons ex", 300);
-        mRuleBook.addRule("Avslagen klubba", 500);
-        mRuleBook.addRule("Bild i tidningen:", 20);
-        mRuleBook.addRule("Ramla på matchvärmning", 20);
+        mRuleBook.add(new Rule("Sen ankomst träning", 50));
+        mRuleBook.add(new Rule("Sen ankomst match", 100));
+        mRuleBook.add(new Rule("Mobil som ringer under samling/genomgång", 50));
+        mRuleBook.add(new Rule("Glömd utrustning till bortamatch", 100));
+        mRuleBook.add(new Rule("Oreda på platsen", 50));
+        mRuleBook.add(new Rule("10 min misconduct", 100));
+        mRuleBook.add(new Rule("Matchstraff för snack", 200));
+        mRuleBook.add(new Rule("Hångel på lokal", 50));
+        mRuleBook.add(new Rule("Ta över någons ex", 300));
+        mRuleBook.add(new Rule("Avslagen klubba", 500));
+        mRuleBook.add(new Rule("Bild i tidningen:", 20));
+        mRuleBook.add(new Rule("Ramla på matchvärmning", 20));
     }
     
     /**
