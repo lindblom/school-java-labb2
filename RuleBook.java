@@ -56,6 +56,7 @@ public class RuleBook
     
     /**
      * Returns a random rule from the rule book
+     * 
      * @return  a random rule
      */
     public Rule randomRule()
