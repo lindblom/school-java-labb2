@@ -50,7 +50,7 @@ public class RuleBook
     public String add(Rule inRule)
     {
         mRules.add(inRule);
-        return "Ny regel tillagd: " + newRule;
+        return "Ny regel tillagd: " + inRule;
     }
     
     /**
