@@ -28,19 +28,19 @@ public class RuleBreaker
     public void mainMenu()
     {
         // print the main menu
-        System.out.println("-------------------------------------------");
-        System.out.println("Välkommen till RuleBreaker!");
-        System.out.println("Här administreras lagets spelregler med böter");
-        System.out.println("Meny");
-        System.out.println("1. Kör slumpning");
-        System.out.println("2. Listor");
-        System.out.println("3. Hantera spelare/regler\n");
-        System.out.println("9. Avsluta\n");
-        System.out.println("Vad vill du göra?");
-        System.out.println("-------------------------------------------");
+        ScreenPrinter.print("-------------------------------------------");
+        ScreenPrinter.print("Välkommen till RuleBreaker!");
+        ScreenPrinter.print("Här administreras lagets spelregler med böter");
+        ScreenPrinter.print("Meny");
+        ScreenPrinter.print("1. Kör slumpning");
+        ScreenPrinter.print("2. Listor");
+        ScreenPrinter.print("3. Hantera spelare/regler\n");
+        ScreenPrinter.print("9. Avsluta\n");
+        ScreenPrinter.print("Vad vill du göra?");
+        ScreenPrinter.print("-------------------------------------------");
         
         // ask the user for its input
-        System.out.print("> ");
+        ScreenPrinter.print("> ");
         int choice = mScanner.nextInt();
         
         // handle the input from the user
@@ -96,7 +96,7 @@ public class RuleBreaker
             case 1:
                     // prints the players in the team
                     System.out.println("Samtliga spelare i laget:");
-                    mTeam.printPlayers();
+                    ScreenPrinter.print(mTeam.playerNames());
                     // shows this menu again
                     listMenu();
                     break;
