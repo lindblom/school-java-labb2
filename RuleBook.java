@@ -22,11 +22,11 @@ public class RuleBook
     }
     
     /**
-     * Prints all the rules as a list.
+     * Returns all the rules as a string array.
      * 
      * @return  an array of strings with the description of the rules 
      */
-    public String[] printRules()
+    public String[] rules()
     {
         ArrayList<String> response = new ArrayList<String>();
         
