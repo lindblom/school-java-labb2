@@ -295,6 +295,6 @@ public class Team
             playerNames.add(player.toString());
         }
         
-        return (String[])playerNames.toArray();
+        return playerNames.toArray(new String[playerNames.size()]);
     }
 }
