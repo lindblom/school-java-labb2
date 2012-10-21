@@ -165,7 +165,7 @@ public class Team
         {
             // add weeks and print the summary
             mWeeks += inWeeks;
-            returnMessage = printSummary();
+            returnMessage = simulationSummary();
         }
         else
         {
@@ -190,7 +190,7 @@ public class Team
         
         returnString += "Total summa till laget: " + fineAmountOfBrokenRules() + " kronor\n\n";
         
-        // print out the player summary for every player
+        // add the player summary for every player
         for(Player player : mPlayers)
         {
             returnString += player.summary() + "\n";
