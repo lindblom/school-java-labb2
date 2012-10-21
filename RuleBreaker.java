@@ -152,7 +152,7 @@ public class RuleBreaker
                     
                     String newPlayer = mScanner.nextLine();
                     // adds the user entered player name
-                    ScreenPrinter.print(addPlayer(newPlayer));
+                    ScreenPrinter.print(mTeam.addPlayer(newPlayer));
                     // shows this menu again
                     managementMenu();
                     break;
@@ -191,46 +191,5 @@ public class RuleBreaker
                     ScreenPrinter.print("Ogiltigt alternativ.\n");
                     managementMenu();
         }
-    }
-    
-    /**
-     * Tell the team to add a player and print out a message.
-     * 
-     * @param   the players full name
-     */
-    public void addPlayer(String inName)
-    {
-        mTeam.addPlayer(inName);
-    }
-    
-    /**
-     * Tell the team to remove a player and print out a message.
-     * 
-     * @param   the full name of the player to be removed
-     */
-    public void removePlayer(String inName)
-    {
-        mTeam.removePlayer(inName);
-    }
-    
-    /**
-     * Tell the team to add a rule and print out a message.
-     * 
-     * @param   the description of the rule
-     * @param   the fine you'll have to pay if you break it
-     */
-    public void addRule(String inRule, int inFine)
-    {
-        mTeam.addRule(inRule, inFine);
-    }
-    
-    /**
-     * Tell the team to simulate x number of weeks of playing and prints out a summary.
-     * 
-     * @param   the number of weeks (must be between 1 and 24)
-     */
-    public void simulatePlaying(int inWeeks)
-    {
-        mTeam.simulatePlaying(inWeeks);
     }
 }
