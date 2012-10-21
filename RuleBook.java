@@ -45,6 +45,7 @@ public class RuleBook
      * 
      * @param   the description of the rule
      * @param   the fine you'll have to pay if you break it
+     * @return  a message saying that the rules has been added
      */
     public String addRule(String inRule, int inFine)
     {
