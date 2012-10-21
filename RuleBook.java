@@ -54,6 +54,23 @@ public class RuleBook
     }
     
     /**
+     * The sum of the fees of all the rules
+     * 
+     * @return  the sum
+     */
+    public int sum()
+    {
+        int sum = 0;
+        
+        for(Rule rule : mRules)
+        {
+            sum += rule.getFine();
+        }
+        
+        return sum;
+    }
+    
+    /**
      * Check the number of rules in the rule book.
      * 
      * @return  the number of rules
