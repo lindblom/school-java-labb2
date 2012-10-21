@@ -177,21 +177,26 @@ public class Team
     }
     
     /**
-     * Prints a summary of the simulated weeks.
+     * Returns a summary of the simulated weeks.
+     * 
+     * @return a summary
      */
-    private void printSummary()
+    private String simulationSummary()
     {
-        System.out.println("Antal veckor: " + mWeeks + " veckor");
-        System.out.println("Totalt antal spelare som brutit mot regler: " + playersWithBrokenRules() + " st");
-        System.out.println("Totalt antal spelregler som brutits: " + numberOfBrokenRules() +" st\n");
+        String returnString = "";
+        returnString += "Antal veckor: " + mWeeks + " veckor\n";
+        returnString += "Totalt antal spelare som brutit mot regler: " + playersWithBrokenRules() + " st\n";
+        returnString += "Totalt antal spelregler som brutits: " + numberOfBrokenRules() +" st\n\n";
         
-        System.out.println("Total summa till laget: " + fineAmountOfBrokenRules() + " kronor\n");
+        returnString += "Total summa till laget: " + fineAmountOfBrokenRules() + " kronor\n\n";
         
         // print out the player summary for every player
         for(Player player : mPlayers)
         {
-            System.out.println(player.summary());
+            returnString += player.summary() + "\n";
         }
+        
+        return returnString;
     }
     
     /**
