@@ -28,34 +28,19 @@ public class InputHandler
      * @return  a string from the user
      */
     public String inputString()
-    {
-        String result = "";
-        
-        while(mScanner.hasNext())
-        {
-            result += mScanner.next();
-        }
-        
-        return result;
+    {   
+        return mScanner.nextLine();
     }
     
     /**
      * Gets an integer from the user
      * 
-     * @return  the integer from the user (returns -1 if user didn't input an integer)
+     * @return  the integer from the user
      */
     public int inputInt()
     {
-        int result = -1;
-        
-        result = mScanner.nextInt();
-        
-        // discard everything else
-        while(mScanner.hasNext())
-        {
-            mScanner.next();
-        }
-        
+        int result = mScanner.nextInt();
+        mScanner.nextLine();
         return result;
     }
 }
