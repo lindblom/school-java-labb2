@@ -30,7 +30,7 @@ public class Team
             "Frej Henriksson", "Greger Sivander", "Carl Alivio", "David Jakrén", "Algot Elvin",
             "Botvid Arg", "Sassi Frizon" };
            
-        loadInitialPlayer(initialPlayerNames);
+        loadInitialPlayers(initialPlayerNames);
     }
     
     /**
@@ -148,7 +148,7 @@ public class Team
         for(int week = 1; week <= inWeeks; week++)
         {
             // randomize a number of broken rules between 0 and the total number of rules
-            int brokenRulesThisWeek = new Random().nextInt(mRules.size() + 1);
+            int brokenRulesThisWeek = new Random().nextInt(mRuleBook.size() + 1);
             
             // for every broken rule this week
             for(int i = 0; i < brokenRulesThisWeek; i++)
@@ -170,7 +170,7 @@ public class Team
         else
         {
             // otherwise print a message telling the user that the input was invalid
-            returnMessage = "Antalet veckor att simulera måste vara mellan 1 och 24.");
+            returnMessage = "Antalet veckor att simulera måste vara mellan 1 och 24.";
         }
         
         return returnMessage;
