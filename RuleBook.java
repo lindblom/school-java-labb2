@@ -33,11 +33,12 @@ public class RuleBook
         for(Rule rule : mRules)
         {
             // add the rule by using the overridden toString method
-            response.add(rule);
+            response.add(rule.toString());
         }
         
-        // converts the ArrayList to an Array.
-        return response.toArray();
+        // converts the ArrayList to an Array of Objects.
+        // the, casts them to be Strings (as we know they are).
+        return (String[])response.toArray();
     }
     
     /**
