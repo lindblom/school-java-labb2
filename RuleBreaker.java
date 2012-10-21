@@ -53,7 +53,7 @@ public class RuleBreaker
                     ScreenPrinter.printCarrot();
                     
                     // run the simulator for the number of weeks the user asked for
-                    simulatePlaying(mScanner.nextInt());
+                    ScreenPrinter.print(mTeam.simulatePlaying(mScanner.nextInt()));
                     
                     // show main menu again
                     mainMenu();
@@ -162,7 +162,7 @@ public class RuleBreaker
                     ScreenPrinter.print("Namn på spelaren som skall tas bort: ");
                     String playerToRemove = mScanner.nextLine();
                     // removes the player
-                    ScreenPrinter.print(removePlayer(playerToRemove));
+                    ScreenPrinter.print(mTeam.removePlayer(playerToRemove));
                     // shows this menu again
                     managementMenu();
                     break;
@@ -176,7 +176,7 @@ public class RuleBreaker
                     ScreenPrinter.printCarrot();
                     int newRuleFine = mScanner.nextInt();
                     // adds the new rule
-                    ScreenPrinter.print(addRule(newRule, newRuleFine));
+                    ScreenPrinter.print(mTeam.addRule(newRule, newRuleFine));
                     // shows this menu again
                     managementMenu();
                     break;
