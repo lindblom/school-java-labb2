@@ -53,12 +53,7 @@ public class Player
      */
     public int fineAmountOfBrokenRules()
     {
-        int sum = 0;
-        for(Rule rule : mBrokenRules)
-        {
-            sum += rule.getFine();
-        }
-        return sum;
+        return mRuleBook.sum();
     }
     
     /**
