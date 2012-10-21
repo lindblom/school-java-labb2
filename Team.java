@@ -68,14 +68,15 @@ public class Team
     }
     
     /**
-     * Adds a player to the collection of players and prints out a message.
+     * Adds a player to the collection of players and returns a message.
      * 
      * @param   the players full name
+     * @return  a message reporting that the player was added
      */
-    public void addPlayer(String inName)
+    public String addPlayer(String inName)
     {
         mPlayers.add(new Player(inName));
-        System.out.println("Spelaren " + inName + " är nu en i laget!");
+        return "Spelaren " + inName + " är nu en i laget!";
     }
     
     /**
