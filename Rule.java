@@ -2,7 +2,7 @@
  * This is the Rule class, representing a rule.
  * 
  * @author Christopher Lindblom
- * @version 2012-10-14
+ * @version 2012-10-21
  */
 public class Rule
 {

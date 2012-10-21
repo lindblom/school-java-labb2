@@ -5,7 +5,7 @@ import java.util.Random;
  * RuleBook is a class that handles a collection of Rules.
  * 
  * @author Christopher Lindblom
- * @version 2012-10-17
+ * @version 2012-10-21
  */
 public class RuleBook
 {

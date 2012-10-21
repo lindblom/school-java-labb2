@@ -6,7 +6,7 @@ import java.util.Random;
  * Write a description of class Team here.
  * 
  * @author Christopher Lindblom
- * @version 2012-10-14
+ * @version 2012-10-21
  */
 public class Team
 {

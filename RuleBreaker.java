@@ -3,7 +3,7 @@
  * This is the RuleBreaker class that handles the players and the rules.
  * 
  * @author Christopher Lindblom
- * @version 2012-10-12
+ * @version 2012-10-21
  */
 public class RuleBreaker
 {

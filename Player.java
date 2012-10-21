@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * The Player class, representing a player.
  * 
  * @author Christopher Lindblom
- * @version 2012-10-14
+ * @version 2012-10-21
  */
 public class Player
 {
