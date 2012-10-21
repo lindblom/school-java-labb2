@@ -1,5 +1,3 @@
-// imports needed java packages
-import java.util.Scanner;
 
 /**
  * This is the RuleBreaker class that handles the players and the rules.
@@ -11,7 +9,7 @@ public class RuleBreaker
 {
     // instance variables - replace the example below with your own
     private Team mTeam;
-    private Scanner mScanner;
+    private InputHandler mInput;
 
     /**
      * Constructor for objects of class RuleBreaker
@@ -19,7 +17,7 @@ public class RuleBreaker
     public RuleBreaker()
     {    
         mTeam = new Team();
-        mScanner = new Scanner(System.in);
+        mInput = new InputHandler();
     }
     
     /**
@@ -42,7 +40,7 @@ public class RuleBreaker
         // ask the user for its input
         ScreenPrinter.printCarrot();
         
-        int choice = mScanner.nextInt();
+        int choice = mInput.inputInt();
         
         // handle the input from the user
         switch (choice)
@@ -53,7 +51,7 @@ public class RuleBreaker
                     ScreenPrinter.printCarrot();
                     
                     // run the simulator for the number of weeks the user asked for
-                    ScreenPrinter.print(mTeam.simulatePlaying(mScanner.nextInt()));
+                    ScreenPrinter.print(mTeam.simulatePlaying(mInput.inputInt()));
                     
                     // show main menu again
                     mainMenu();
@@ -92,7 +90,7 @@ public class RuleBreaker
         
         // get input from user
         ScreenPrinter.printCarrot();
-        int choice = mScanner.nextInt();
+        int choice = mInput.inputInt();
         
         // handle the users input
         switch (choice)
@@ -140,7 +138,7 @@ public class RuleBreaker
         
         // gets the user input
         ScreenPrinter.printCarrot();
-        int choice = mScanner.nextInt();
+        int choice = mInput.inputInt();
         
         // handles the user input
         switch (choice)
@@ -150,7 +148,7 @@ public class RuleBreaker
                     System.out.print("Namn på den nya spelaren: ");
                     ScreenPrinter.printCarrot();
                     
-                    String newPlayer = mScanner.nextLine();
+                    String newPlayer = mInput.inputString();
                     // adds the user entered player name
                     ScreenPrinter.print(mTeam.addPlayer(newPlayer));
                     // shows this menu again
@@ -160,7 +158,7 @@ public class RuleBreaker
             case 2: 
                     // asks the user for the name of the player to remove
                     ScreenPrinter.print("Namn på spelaren som skall tas bort: ");
-                    String playerToRemove = mScanner.nextLine();
+                    String playerToRemove = mInput.inputString();
                     // removes the player
                     ScreenPrinter.print(mTeam.removePlayer(playerToRemove));
                     // shows this menu again
@@ -170,11 +168,11 @@ public class RuleBreaker
             case 3: 
                     // asks the user what rule it wants to add
                     ScreenPrinter.print("Regeln du vill lägga till: ");
-                    String newRule = mScanner.nextLine();
+                    String newRule = mInput.inputString();
                     // asks the user for the fine to be set on the new rule
                     ScreenPrinter.print("Bötesbeloppet på regeln (i kronor): ");
                     ScreenPrinter.printCarrot();
-                    int newRuleFine = mScanner.nextInt();
+                    int newRuleFine = mInput.inputInt();
                     // adds the new rule
                     ScreenPrinter.print(mTeam.addRule(newRule, newRuleFine));
                     // shows this menu again
