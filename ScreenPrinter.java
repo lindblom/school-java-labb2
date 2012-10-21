@@ -36,4 +36,12 @@ public class ScreenPrinter
             print(string);   
         }
     }
+    
+    /**
+     * Prints a carrot to the screen
+     */
+    public static void printCarrot()
+    {
+        System.out.print("> ");
+    }
 }
