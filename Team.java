@@ -119,7 +119,7 @@ public class Team
     }
   
     /**
-     * Adds a rule to the collection of rules and prints out a message.
+     * Adds a rule to the collection of rules and return a message.
      * 
      * @param   the description of the rule
      * @param   the fine you'll have to pay if you break it
@@ -127,7 +127,7 @@ public class Team
      */
     public String addRule(String inRule, int inFine)
     {
-        return mRuleBook.addRule(inRule, inFine);
+        return mRuleBook.add(new Rule(inRule, inFine));
     }
     
     /**
