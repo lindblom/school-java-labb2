@@ -103,7 +103,7 @@ public class RuleBreaker
             case 2: 
                     // prints the rules for the team
                     System.out.println("Samtliga regler för laget:");
-                    mTeam.printRules();
+                    ScreenPrinter.print(mTeam.teamRules());
                     // show this menu again
                     listMenu();
                     break;
@@ -142,7 +142,7 @@ public class RuleBreaker
             case 1:
                     // asks the user for the new players name
                     System.out.print("Namn på den nya spelaren: ");
-                    String newPlayer = mScanner.next();
+                    String newPlayer = mScanner.nextLine();
                     // adds the user entered player name
                     addPlayer(newPlayer);
                     // shows this menu again
@@ -152,7 +152,7 @@ public class RuleBreaker
             case 2: 
                     // asks the user for the name of the player to remove
                     System.out.print("Namn på spelaren som skall tas bort: ");
-                    String playerToRemove = mScanner.next();
+                    String playerToRemove = mScanner.nextLine();
                     // removes the player
                     removePlayer(playerToRemove);
                     // shows this menu again
