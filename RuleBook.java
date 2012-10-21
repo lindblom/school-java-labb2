@@ -56,6 +56,16 @@ public class RuleBook
     }
     
     /**
+     * Check the number of rules in the rule book.
+     * 
+     * @return  the number of rules
+     */
+    public int size()
+    {
+        return mRules.size();
+    }
+    
+    /**
      * Returns a random rule from the rule book
      * 
      * @return  a random rule
