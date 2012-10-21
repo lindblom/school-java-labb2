@@ -271,14 +271,20 @@ public class Team
     }
     
     /**
-     * Prints all the player names as a list.
+     * Player names as a String array.
+     * 
+     * @return player names
      */
-    public void printPlayers()
+    public String[] playerNames()
     {
+        ArrayList<String> playerNames = new ArrayList<String>();
+        
         for(Player player : mPlayers)
         {
             // prints the player by using the overridden toString method
-            System.out.println(player);
+            playerNames.add(player.toString());
         }
+        
+        return (String[])playerNames.toArray();
     }
 }
