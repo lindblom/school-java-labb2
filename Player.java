@@ -53,7 +53,7 @@ public class Player
      */
     public int fineAmountOfBrokenRules()
     {
-        return mRuleBook.sum();
+        return mBrokenRules.sum();
     }
     
     /**
