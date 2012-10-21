@@ -271,6 +271,16 @@ public class Team
     }
     
     /**
+     * The Team rules as a String array.
+     * 
+     * @return team rules
+     */
+    public String[] teamRules()
+    {
+        return mRuleBook.rules();
+    }
+    
+    /**
      * Player names as a String array.
      * 
      * @return player names
