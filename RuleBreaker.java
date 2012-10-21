@@ -17,28 +17,8 @@ public class RuleBreaker
      * Constructor for objects of class RuleBreaker
      */
     public RuleBreaker()
-    {   
-        // save inital players names in a string array for later use
-        String[] playerNames = { "Anders Andersson", "Karl Svensson", "Anton Viktorsson",
-            "Frej Henriksson", "Greger Sivander", "Carl Alivio", "David Jakrén", "Algot Elvin",
-            "Botvid Arg", "Sassi Frizon" };
-        
-        mTeam = new Team(playerNames);
-        
-        // add initial rules one-by-one
-        mTeam.addRuleWithoutPrint("Sen ankomst träning", 50);
-        mTeam.addRuleWithoutPrint("Sen ankomst match", 100);
-        mTeam.addRuleWithoutPrint("Mobil som ringer under samling/genomgång", 50);
-        mTeam.addRuleWithoutPrint("Glömd utrustning till bortamatch", 100);
-        mTeam.addRuleWithoutPrint("Oreda på platsen", 50);
-        mTeam.addRuleWithoutPrint("10 min misconduct", 100);
-        mTeam.addRuleWithoutPrint("Matchstraff för snack", 200);
-        mTeam.addRuleWithoutPrint("Hångel på lokal", 50);
-        mTeam.addRuleWithoutPrint("Ta över någons ex", 300);
-        mTeam.addRuleWithoutPrint("Avslagen klubba", 500);
-        mTeam.addRuleWithoutPrint("Bild i tidningen:", 20);
-        mTeam.addRuleWithoutPrint("Ramla på matchvärmning", 20);
-        
+    {    
+        mTeam = new Team();
         mScanner = new Scanner(System.in);
     }
     
