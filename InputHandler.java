@@ -19,7 +19,7 @@ public class InputHandler
     public InputHandler()
     {
         // initialise instance variables
-        mScanner = new Scanner(System.io);
+        mScanner = new Scanner(System.in);
     }
 
     /**
