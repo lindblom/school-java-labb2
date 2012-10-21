@@ -11,7 +11,7 @@ public class Player
 {
     // instance variables
     private String mName;
-    private ArrayList<Rule> mBrokenRules;
+    private RuleBook mBrokenRules;
 
     /**
      * Constructor for objects of class Player
@@ -22,7 +22,7 @@ public class Player
     {
         // initialise instance variables
         mName = inName;
-        mBrokenRules = new ArrayList<Rule>();
+        mBrokenRules = new RuleBook();
     }
     
     /**
