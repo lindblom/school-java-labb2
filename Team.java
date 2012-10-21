@@ -134,8 +134,9 @@ public class Team
      * Simulate playing x number of weeks and prints out a summary.
      * 
      * @param   the number of weeks (must be between 1 and 24)
+     * @return  a summary of what happend
      */
-    public void simulatePlaying(int inWeeks)
+    public String simulatePlaying(int inWeeks)
     {
         // sets inWeeks to 0 unless its within the allowed rage
         if(inWeeks < 1 || inWeeks > 24)
@@ -157,18 +158,22 @@ public class Team
             }
         }
         
+        String returnMessage = "";
+        
         // if a valid value was given for inWeeks
         if(inWeeks != 0)
         {
             // add weeks and print the summary
             mWeeks += inWeeks;
-            printSummary();
+            returnMessage = printSummary();
         }
         else
         {
             // otherwise print a message telling the user that the input was invalid
-            System.out.println("Antalet veckor att simulera måste vara mellan 1 och 24.");
+            returnMessage = "Antalet veckor att simulera måste vara mellan 1 och 24.");
         }
+        
+        return returnMessage;
     }
     
     /**
