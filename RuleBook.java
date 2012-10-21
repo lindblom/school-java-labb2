@@ -42,16 +42,14 @@ public class RuleBook
     }
     
     /**
-     * Adds a rule to the collection of rules and prints out a message.
+     * Adds a rule to the collection of rules and returns a message.
      * 
-     * @param   the description of the rule
-     * @param   the fine you'll have to pay if you break it
+     * @param   the rule to be added
      * @return  a message saying that the rules has been added
      */
-    public String addRule(String inRule, int inFine)
+    public String add(Rule inRule)
     {
-        Rule newRule = new Rule(inRule, inFine);
-        mRules.add(newRule);
+        mRules.add(inRule);
         return "Ny regel tillagd: " + newRule;
     }
     
