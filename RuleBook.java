@@ -23,14 +23,21 @@ public class RuleBook
     
     /**
      * Prints all the rules as a list.
+     * 
+     * @return  an array of strings with the description of the rules 
      */
-    public void printRules()
+    public String[] printRules()
     {
+        ArrayList<String> response = new ArrayList<String>();
+        
         for(Rule rule : mRules)
         {
-            // prints the rule by using the overridden toString method
-            System.out.println(rule);
+            // add the rule by using the overridden toString method
+            response.add(rule);
         }
+        
+        // converts the ArrayList to an Array.
+        return response.toArray();
     }
     
     /**
