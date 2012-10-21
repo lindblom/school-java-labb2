@@ -145,7 +145,7 @@ public class RuleBreaker
         {
             case 1:
                     // asks the user for the new players name
-                    System.out.print("Namn på den nya spelaren: ");
+                    ScreenPrinter.print("Namn på den nya spelaren: ");
                     ScreenPrinter.printCarrot();
                     
                     String newPlayer = mInput.inputString();
@@ -158,6 +158,8 @@ public class RuleBreaker
             case 2: 
                     // asks the user for the name of the player to remove
                     ScreenPrinter.print("Namn på spelaren som skall tas bort: ");
+                    ScreenPrinter.printCarrot();
+                    
                     String playerToRemove = mInput.inputString();
                     // removes the player
                     ScreenPrinter.print(mTeam.removePlayer(playerToRemove));
@@ -168,6 +170,7 @@ public class RuleBreaker
             case 3: 
                     // asks the user what rule it wants to add
                     ScreenPrinter.print("Regeln du vill lägga till: ");
+                    ScreenPrinter.printCarrot();
                     String newRule = mInput.inputString();
                     // asks the user for the fine to be set on the new rule
                     ScreenPrinter.print("Bötesbeloppet på regeln (i kronor): ");
